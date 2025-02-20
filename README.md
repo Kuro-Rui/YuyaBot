@@ -6,7 +6,7 @@ A general-purpose Discord bot inspired by Shinyu from TWS.
 
 ## Invite the bot!
 
-https://discord.com/oauth2/authorize?client_id=890596157699526686&scope=bot+applications.commands&permissions=274878286912
+https://discord.com/oauth2/authorize?client_id=849859262673977394
 
 ---
 
