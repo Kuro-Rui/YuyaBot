@@ -2,8 +2,8 @@
     "exclude": ["node_modules"],
     "compilerOptions": {
         "target": "ESNext",
-        "module": "ESNext",
-        "moduleResolution": "bundler",
+        "module": "CommonJS",
+        "moduleResolution": "node10",
         "allowUmdGlobalAccess": true,
         "resolveJsonModule": true,
         "outDir": "dist",
