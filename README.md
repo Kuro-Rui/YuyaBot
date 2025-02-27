@@ -26,6 +26,7 @@ This guide won't be that detailed since I don't meant for this bot to be self-ho
 3. Set up `.env` (rename `.env.example` to `.env`)
     > `DISCORD_TOKEN` : The bot's token
 4. Set up `config.json` (rename `config.example.json` to `config.json`)
+    > `mobile` : Whether the bot should have mobile status or not
     > `prefix` : The bot's prefix
 
 ### Running the bot:
