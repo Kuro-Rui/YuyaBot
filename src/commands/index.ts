@@ -1,22 +1,22 @@
-import { DebugPrefixCommand } from "./prefix/debug";
-import { EvalPrefixCommand } from "./prefix/eval";
-import { HelpPrefixCommand } from "./prefix/help";
-import { ShutdownPrefixCommand } from "./prefix/shutdown";
-import { HelpSlashCommand } from "./slash/help";
-import { PingSlashCommand } from "./slash/ping";
-import { UptimeSlashCommand } from "./slash/uptime";
+import { debugPrefixCommand } from "./prefix/debug";
+import { evalPrefixCommand } from "./prefix/eval";
+import { helpPrefixCommand } from "./prefix/help";
+import { shutdownPrefixCommand } from "./prefix/shutdown";
+import { helpSlashCommand } from "./slash/help";
+import { pingSlashCommand } from "./slash/ping";
+import { uptimeSlashCommand } from "./slash/uptime";
 import { PrefixCommand, SlashCommand } from "../models/commands";
 
 // Prefix commands is ONLY for dev commands
 export const allPrefixCommands = [
-    new DebugPrefixCommand(),
-    new EvalPrefixCommand(),
-    new HelpPrefixCommand(),
-    new ShutdownPrefixCommand(),
+    debugPrefixCommand,
+    evalPrefixCommand,
+    helpPrefixCommand,
+    shutdownPrefixCommand,
 ] as PrefixCommand[];
 
 export const allSlashCommands = [
-    new HelpSlashCommand(),
-    new PingSlashCommand(),
-    new UptimeSlashCommand(),
+    helpSlashCommand,
+    pingSlashCommand,
+    uptimeSlashCommand,
 ] as SlashCommand[];

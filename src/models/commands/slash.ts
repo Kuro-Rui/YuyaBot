@@ -6,9 +6,16 @@ import {
 } from "discord.js";
 import { Command, CommandOptions } from "./command";
 
-export abstract class SlashCommand extends Command {
+export type SlashCommandExecutableFunction = (
+    interaction: ChatInputCommandInteraction,
+) => Promise<void>;
+
+export class SlashCommand extends Command {
     private readonly _data = new SlashCommandBuilder();
     public readonly cooldown: number;
+    protected _executable: SlashCommandExecutableFunction = async (
+        interaction: ChatInputCommandInteraction,
+    ) => {};
 
     constructor(options: CommandOptions) {
         super();
@@ -19,6 +26,10 @@ export abstract class SlashCommand extends Command {
 
     public get data(): SlashCommandBuilder {
         return this._data;
+    }
+
+    public setExecutable(executable: SlashCommandExecutableFunction): void {
+        this._executable = executable;
     }
 
     public async reply(
@@ -34,5 +45,7 @@ export abstract class SlashCommand extends Command {
         return true;
     }
 
-    public abstract execute(interaction: ChatInputCommandInteraction): Promise<void>;
+    public execute(interaction: ChatInputCommandInteraction): Promise<void> {
+        return this._executable(interaction);
+    }
 }

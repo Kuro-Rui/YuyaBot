@@ -50,4 +50,9 @@ export class Yuya extends Client {
     public get prefix(): string {
         return config.prefix;
     }
+
+    public cleanMessage(content: string): string {
+        if (!this.token) return content;
+        return content.replace(this.token, "[REDACTED]");
+    }
 }
