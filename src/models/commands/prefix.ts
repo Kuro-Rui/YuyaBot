@@ -1,6 +1,6 @@
 import { Message } from "discord.js";
 import { Command, CommandOptions } from "./command";
-import { Bot } from "../bot";
+import { Yuya } from "../bot";
 
 export interface PrefixCommandOptions extends CommandOptions {
     aliases?: string[];
@@ -22,7 +22,7 @@ export abstract class PrefixCommand extends Command {
 
     public async check(message: Message): Promise<boolean> {
         // Prefix commands is ONLY for dev commands
-        if (!(await (message.client as Bot).isOwner(message.author.id))) return false;
+        if (!(await (message.client as Yuya).isOwner(message.author.id))) return false;
         return true;
     }
 

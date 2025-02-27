@@ -5,20 +5,20 @@ import {
     Message,
     MessageFlags,
 } from "discord.js";
-import { Bot } from "../bot";
+import { Yuya } from "../bot";
 import { PrefixCommand, SlashCommand } from "../commands";
 import { Logger } from "../logger";
 import { allPrefixCommands, allSlashCommands } from "../../commands";
 
 export class CommandsHandler {
-    public readonly bot: Bot;
+    public readonly bot: Yuya;
     private readonly logger = new Logger("CommandsHandler");
     // TODO: Cooldowns handling
     private cooldowns: Collection<string, Collection<string, number>> = new Collection();
     public readonly prefixCommands: Collection<string, PrefixCommand> = new Collection();
     public readonly slashCommands: Collection<string, SlashCommand> = new Collection();
 
-    constructor(bot: Bot) {
+    constructor(bot: Yuya) {
         this.bot = bot;
     }
 

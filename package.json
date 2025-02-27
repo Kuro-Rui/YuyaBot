@@ -1,6 +1,6 @@
 {
     "name": "yuyabot",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A general-purpose Discord bot inspired by Shinyu from TWS.",
     "main": "dist/src/index.js",
     "scripts": {

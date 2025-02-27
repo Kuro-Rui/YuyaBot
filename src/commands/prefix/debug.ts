@@ -1,5 +1,5 @@
 import { Client, Message } from "discord.js";
-import * as discord from "discord.js";
+import discord from "discord.js";
 import { inspect } from "util";
 import { PrefixCommand } from "../../models/commands";
 import * as utils from "../../utils";
@@ -39,7 +39,7 @@ export class DebugPrefixCommand extends PrefixCommand {
                 inspect(
                     await new Function(
                         ...Object.keys(env),
-                        `return (async () => { return ${args.join(" ")} })();`,
+                        `return (async () => return ${args.join(" ")})();`,
                     )(...Object.values(env)),
                     {
                         breakLength: 40,

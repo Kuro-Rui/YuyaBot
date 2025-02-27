@@ -1,7 +1,7 @@
 import { IntentsBitField, Partials } from "discord.js";
-import { Bot } from "./models/bot";
+import { Yuya } from "./models/bot";
 
-export const yuya = new Bot({
+const yuya = new Yuya({
     intents: [
         IntentsBitField.Flags.Guilds,
         IntentsBitField.Flags.GuildMembers,

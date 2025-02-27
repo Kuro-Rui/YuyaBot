@@ -1,6 +1,6 @@
 import { Message } from "discord.js";
 import { Event } from "./event";
-import { Bot } from "../models/bot";
+import { Yuya } from "../models/bot";
 import { Logger } from "../models/logger";
 import config from "../../config.json";
 
@@ -39,7 +39,7 @@ export class PrefixCommandEvent extends Event {
         const commandName = args.shift()?.toLowerCase();
         if (!commandName) return;
 
-        await (message.client as Bot).handlers.commands.handlePrefixCommand(
+        await (message.client as Yuya).handlers.commands.handlePrefixCommand(
             message,
             commandName,
             ...args,

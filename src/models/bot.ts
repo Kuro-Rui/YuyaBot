@@ -3,15 +3,15 @@ import { CommandsHandler } from "./handlers/commands";
 import { EventsHandler } from "./handlers/events";
 import { Logger } from "./logger";
 
-export interface BotOptions extends ClientOptions {
+export interface YuyaOptions extends ClientOptions {
     mobile?: boolean;
 }
 
-export class Bot extends Client {
-    private readonly logger = new Logger("Bot");
+export class Yuya extends Client {
+    private readonly logger = new Logger("Yuya");
     public readonly handlers: { commands: CommandsHandler; events: EventsHandler };
 
-    constructor(options: BotOptions) {
+    constructor(options: YuyaOptions) {
         super(options);
         this.handlers = { commands: new CommandsHandler(this), events: new EventsHandler(this) };
         if (options.mobile) {

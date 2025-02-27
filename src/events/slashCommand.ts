@@ -1,6 +1,6 @@
 import { Interaction } from "discord.js";
 import { Event } from "./event";
-import { Bot } from "../models/bot";
+import { Yuya } from "../models/bot";
 import { Logger } from "../models/logger";
 
 export class SlashCommandEvent extends Event {
@@ -9,6 +9,6 @@ export class SlashCommandEvent extends Event {
 
     public async handle(interaction: Interaction): Promise<void> {
         if (!interaction.isChatInputCommand()) return;
-        await (interaction.client as Bot).handlers.commands.handleSlashCommand(interaction);
+        await (interaction.client as Yuya).handlers.commands.handleSlashCommand(interaction);
     }
 }
