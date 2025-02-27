@@ -155,10 +155,7 @@ export class CommandsHandler {
         ...args: string[]
     ): Promise<void> {
         const command = this.getPrefixCommand(name);
-        if (!command) {
-            this.logger.error(`Prefix command "${name}" not found.`);
-            return;
-        }
+        if (!command) return;
         if (!(await command.check(message))) return;
 
         try {

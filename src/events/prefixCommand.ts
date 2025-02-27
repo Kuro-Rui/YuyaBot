@@ -2,7 +2,6 @@ import { Message } from "discord.js";
 import { Event } from "./event";
 import { Yuya } from "../models/bot";
 import { Logger } from "../models/logger";
-import config from "../../config.json";
 
 export class PrefixCommandEvent extends Event {
     public readonly name = "messageCreate";
@@ -11,7 +10,7 @@ export class PrefixCommandEvent extends Event {
     public async handle(message: Message): Promise<void> {
         if (message.author.bot) return;
 
-        const prefixes = [config.prefix, String(message.client.user)];
+        const prefixes = [(message.client as Yuya).prefix, String(message.client.user)];
         let usedPrefix;
         for (const prefix of prefixes) {
             if (message.content.toLowerCase().startsWith(prefix.toLowerCase())) {

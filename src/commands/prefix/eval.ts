@@ -1,5 +1,5 @@
 import { Client, Message } from "discord.js";
-import discord from "discord.js";
+import * as discord from "discord.js";
 import { inspect } from "util";
 import { PrefixCommand } from "../../models/commands";
 import * as utils from "../../utils";

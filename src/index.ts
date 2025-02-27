@@ -11,7 +11,6 @@ const yuya = new Yuya({
     ],
     partials: [Partials.Channel, Partials.GuildMember, Partials.Message, Partials.User],
     failIfNotExists: false,
-    mobile: true,
 });
 
 process.on("SIGINT", () => yuya.destroy());
