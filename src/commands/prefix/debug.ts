@@ -34,7 +34,7 @@ debugPrefixCommand.setExecutable(async (message: Message, ...args: string[]) => 
             inspect(
                 await new Function(
                     ...Object.keys(env),
-                    `return (async () => return ${args.join(" ")})();`,
+                    `return (async () => { return ${args.join(" ")} })();`,
                 )(...Object.values(env)),
                 {
                     breakLength: 40,
